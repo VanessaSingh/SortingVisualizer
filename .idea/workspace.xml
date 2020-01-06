@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8b0648e-288a-491a-a67a-694089157648" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quick_sort_animation.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bubble_sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/bubble_sort.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bubble_sort_animation.gif" beforeDir="false" afterPath="$PROJECT_DIR$/bubble_sort_animation.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/merge_sort_animation.gif" beforeDir="false" afterPath="$PROJECT_DIR$/merge_sort_animation.gif" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,6 +107,14 @@
       <option name="presentableId" value="Default" />
       <updated>1577570994732</updated>
     </task>
+    <task id="LOCAL-00001" summary="Quick, Merge, Bubble Working">
+      <created>1578284150203</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578284150203</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,5 +130,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Quick, Merge, Bubble Working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quick, Merge, Bubble Working" />
   </component>
 </project>

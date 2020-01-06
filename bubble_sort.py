@@ -18,6 +18,19 @@ class Sort:
         plt.bar(self.y_axis, self.nums, color='orange')
         self.cam.snap()
 
+    def insertion_sort(self):
+        for i in range(1, self.len):
+            ele = self.nums[i]
+            j = i-1
+            while j >= 0 and ele < self.nums[j]:
+                self.nums[j+1] = self.nums[j]
+                # plt.bar(self.y_axis, self.nums, color='orange')
+                # self.cam.snap()
+                j = j-1
+            self.nums[j+1] = ele
+            plt.bar(self.y_axis, self.nums, color='orange')
+            self.cam.snap()
+
     def partition(self, arr, l, r):
         i = l - 1
         pivot = arr[r]
@@ -121,6 +134,12 @@ def main():
         start_time = time.time()
         obj1.quick_sort(nums, 0, len - 1)
         elapsed_time = time.time() - start_time
+
+    elif alg == "insertion":
+        start_time = time.time()
+        obj1.insertion_sort()
+        elapsed_time = time.time() - start_time
+
     print("Time : ", elapsed_time)
     animation = cam.animate(interval=800, blit=True, repeat=False, repeat_delay=1000)
     animation.save(alg + '_sort_animation.gif', writer='imagemagick')
