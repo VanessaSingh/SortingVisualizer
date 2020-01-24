@@ -23,3 +23,5 @@ The main script is sorting_algos.py and it can be executed with the following pa
         'merge'     - Performs Merge Sort
         
         'all'       - Performs all the above mentioned sorts
+        
+![](bubble_sort_animation.gif)
