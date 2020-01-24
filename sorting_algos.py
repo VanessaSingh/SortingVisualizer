@@ -24,48 +24,42 @@ class Sort:
             j = i - 1
             while j >= 0 and ele < self.nums[j]:
                 self.nums[j + 1] = self.nums[j]
-                # plt.bar(self.y_axis, self.nums, color='orange')
-                # self.cam.snap()
                 j = j - 1
             self.nums[j + 1] = ele
             plt.bar(self.y_axis, self.nums, color='orange')
             self.cam.snap()
 
-    def partition(self, arr, l, r):
-        i = l - 1
-        pivot = arr[r]
-        for j in range(l, r):
+    def partition(self, arr, left, right):
+        i = left - 1
+        pivot = arr[right]
+        for j in range(left, right):
             if arr[j] <= pivot:
                 i = i + 1
-                t = arr[i]
-                arr[i] = arr[j]
-                arr[j] = t
-        t = arr[i + 1]
-        arr[i + 1] = arr[r]
-        arr[r] = t
+                arr[i], arr[j] = arr[j], arr[i]
+        arr[i+1], arr[right] = arr[right], arr[i+1]
         plt.bar(self.y_axis, arr, color='orange')
         self.cam.snap()
         return i + 1
 
-    def quick_sort(self, arr, l, r):
-        if l < r:
-            p = self.partition(arr, l, r)
-            self.quick_sort(arr, l, p - 1)
-            self.quick_sort(arr, p + 1, r)
+    def quick_sort(self, arr, left, right):
+        if left < right:
+            pivot = self.partition(arr, left, right)
+            self.quick_sort(arr, left, pivot - 1)
+            self.quick_sort(arr, pivot + 1, right)
 
-    def merge(self, arr, l, m, r):
-        n1 = m - l + 1
-        n2 = r - m
+    def merge(self, arr, left, mid, right):
+        n1 = mid - left + 1
+        n2 = right - mid
         arr_left = [0] * n1
         arr_right = [0] * n2
         for i in range(0, n1):
-            arr_left[i] = arr[l + i]
+            arr_left[i] = arr[left + i]
 
         for j in range(0, n2):
-            arr_right[j] = arr[m + 1 + j]
+            arr_right[j] = arr[mid + 1 + j]
         i = 0
         j = 0
-        k = l
+        k = left
 
         while i < n1 and j < n2:
             if arr_left[i] <= arr_right[j]:
@@ -86,12 +80,12 @@ class Sort:
         plt.bar(self.y_axis, arr, color='orange')
         self.cam.snap()
 
-    def merge_sort(self, arr, l, r):
-        if l < r:
-            m = int((l + r) / 2)
-            self.merge_sort(arr, l, m)
-            self.merge_sort(arr, m + 1, r)
-            self.merge(arr, l, m, r)
+    def merge_sort(self, arr, left, right):
+        if left < right:
+            m = int((left + right) / 2)
+            self.merge_sort(arr, left, m)
+            self.merge_sort(arr, m + 1, right)
+            self.merge(arr, left, m, right)
 
     def bubble_sort(self):
         y_axis = np.arange(self.len)
@@ -121,18 +115,30 @@ class Sort:
             plt.bar(y_axis, self.nums, color='orange')
             self.cam.snap()
 
+    def heapify(self, arr, n, i):
+        largest = i
+        left = 2*i + 1
+        right = 2*i + 2
+        if left < n and arr[i] < arr[left]:
+            largest = left
+        if right < n and arr[largest] < arr[right]:
+            largest = right
+        if largest != i:
+            arr[i], arr[largest] = arr[largest], arr[i]
+            self.heapify(arr, n, largest)
+
     def heap_sort(self):
         y_axis = np.arange(self.len)
         plt.bar(y_axis, self.nums, color='orange')
         self.cam.snap()
-        for i in range(0, self.len - 1, 1):
-            for j in range(0, self.len - i - 1, 1):
-                if self.nums[j] > self.nums[j + 1]:
-                    temp = self.nums[j]
-                    self.nums[j] = self.nums[j + 1]
-                    self.nums[j + 1] = temp
-                    plt.bar(y_axis, self.nums, color='orange')
-                    self.cam.snap()
+        n = int(self.len/2)
+        for i in range(n - 1, -1, -1):
+            self.heapify(self.nums, self.len, i)
+        for i in range(self.len-1,  -1, -1):
+            self.nums[0], self.nums[i] = self.nums[i], self.nums[0]
+            plt.bar(y_axis, self.nums, color='orange')
+            self.cam.snap()
+            self.heapify(self.nums, i, 0)
 
 
 def main():

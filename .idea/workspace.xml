@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8b0648e-288a-491a-a67a-694089157648" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/all_sort_animation.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/selection_sort_animation.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heap_sort_animation.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_sort_animation.gif" beforeDir="false" afterPath="$PROJECT_DIR$/all_sort_animation.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sorting_algos.py" beforeDir="false" afterPath="$PROJECT_DIR$/sorting_algos.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -160,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578290219213</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Selection, All Option">
+      <created>1579826379702</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579826379702</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +188,7 @@
     <MESSAGE value="Quick, Merge, Bubble Working" />
     <MESSAGE value="Insertion Working" />
     <MESSAGE value="Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
+    <MESSAGE value="Added Selection, All Option" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Selection, All Option" />
   </component>
 </project>
