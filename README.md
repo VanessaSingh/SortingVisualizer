@@ -24,4 +24,5 @@ The main script is sorting_algos.py and it can be executed with the following pa
         
         'all'       - Performs all the above mentioned sorts
         
+## Example: GIF generated for Bubble Sort
 ![](bubble_sort_animation.gif)
